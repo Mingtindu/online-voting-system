@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register.html</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>Easy Online voting system</h1>
+    <form action="../api/register.php" method="POST" enctype="multipart/form-data">
+        <h2>Registration</h2>
+        <input class="inp" type="text" name="name" placeholder="Name">
+        <input class="inp" type="number" name="mobile" id="" placeholder="Mobile">
+        <input class="inp" type="password" name="password" placeholder="Password">
+        <input class="inp" type="password" name="cpassword" id="" placeholder="Confirm Password">
+        <input class="inp" type="text" name="address" placeholder="Address">
+        <select class="inp" name="role" id="">Select your role
+            <option value="Voter">Voter</option>
+            <option value="Candidate">Group</option>
+        </select>
+        <label class="inp" for="imageInput">Choose an image:</label>
+        <input class="inp" type="file" id="imageInput" name="photo" accept="image/*">
+        <button type="submit">Register</button>
+    </form>
+    <p>Already user? <a href="../index.html">Login here</a></p>
+</body>
+</html>

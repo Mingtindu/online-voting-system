@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <!-- Add Font Awesome for user icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.inp {
+    padding: 10px 30px;
+    width: 84%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    padding: 10px 30px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Easy Online Voting System</h1>
+    <div class="login-container">
+        <form action="api/login.php" method="post">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input class="inp" name="mobile" type="number" placeholder="Enter your phone">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input class="inp" name="password" type="password" placeholder="Enter your password">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-users"></i>
+                <select name="role" id="">
+                    <option value="voter">Voter</option>
+                    <option value="candidate">Candidate</option>
+                </select>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>New user? <a href="./routes/register.html">Register here</a></p>
+        <p>Admin login <a href="./routes/admin.html">admin</a></p>
+    </div>
+    <div style="width: 30%; margin: 20px;justify-content: center;align-items: center;">
+        <button onclick="showHowItWorks()" >How It Works</button>
+        <div id="howItWorksContent" style="display: none;">
+            <h2>How the Voting System Works</h2>
+            <p>Our online voting system allows registered users to cast their votes securely from any location with internet access. Upon logging in, voters can select their preferred candidates or options, and their votes are recorded anonymously in our database.</p>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Button -->
+    <div>
+        <button onclick="showPrivacyPolicy()" style="width: 30%; margin: 20px; justify-content: center;align-items: center;">Privacy Policy</button>
+        <div id="privacyPolicyContent" style="display: none;">
+            <h2>Privacy Policy</h2>
+            <p>Protecting your privacy is our top priority. We ensure that all personal information provided during the registration and voting process is securely stored and used only for the purpose of facilitating fair and transparent elections. We do not share any voter data with third parties.</p>
+        </div>
+    </div>
+
+    <script>
+        function showHowItWorks() {
+            var x = document.getElementById("howItWorksContent");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function showPrivacyPolicy() {
+            var x = document.getElementById("privacyPolicyContent");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
